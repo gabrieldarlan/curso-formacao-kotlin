@@ -1,8 +1,8 @@
 fun testaConta() {
-    val contaGabriel = Conta(titular = "Gabriel", numero = 1000)
+    val contaGabriel = ContaCorrente(titular = "Gabriel", numero = 1000)
     contaGabriel.deposita(200.0)
 
-    val contaKarla = Conta(numero = 1001, titular = "Karla")
+    val contaKarla = ContaPoupanca(numero = 1001, titular = "Karla")
     contaKarla.deposita(300.0)
 
     println(contaKarla.titular)
