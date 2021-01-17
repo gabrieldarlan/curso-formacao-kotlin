@@ -1,24 +1,18 @@
 class Diretor(
-    nome: String,
-    cpf: String,
-    salario: Double,
-    val senha: Int,
-    val plr: Double
-) : Funcionario(
-    nome = nome,
-    cpf = cpf,
-    salario = salario
-) {
+        nome: String,
+        cpf: String,
+        salario: Double,
+        senha: Int,
+        val plr: Double
+) : FuncionarioAdmin(
+        nome = nome,
+        cpf = cpf,
+        salario = salario,
+        senha = senha
+), Autenticavel {
     override fun bonificacao(): Double {
-        return  this.salario + this.plr
+        return this.salario + this.plr
     }
 
-    fun autentica(senha: Int): Boolean {
-        return when (this.senha) {
-            senha -> {
-                true
-            }
-            else -> false
-        }
-    }
+
 }
