@@ -1,6 +1,5 @@
 fun main() {
     println("Bem vindo ao Bytebank")
 
-    testaContasDiferentes()
-    testaCopiasEReferencias()
+    // push do ubuntu
 }
