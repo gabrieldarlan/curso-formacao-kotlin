@@ -1,18 +1,15 @@
-package modelo
-
-import modelo.Autenticavel
-import modelo.Funcionario
+package br.com.gdarlan.bytebank.modelo
 
 abstract class FuncionarioAdmin(
         nome: String,
         cpf: String,
         salario: Double,
         protected val senha: Int,
-) : Funcionario(
+) : br.com.gdarlan.bytebank.modelo.Funcionario(
         nome = nome,
         cpf = cpf,
         salario = salario
-), Autenticavel {
+), br.com.gdarlan.bytebank.modelo.Autenticavel {
     override fun autentica(senha: Int): Boolean {
         if (this.senha == senha) {
             return true

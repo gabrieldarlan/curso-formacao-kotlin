@@ -1,11 +1,10 @@
-package modelo
-
-import modelo.Autenticavel
+package br.com.gdarlan.bytebank.modelo
 
 class Cliente(
-        val nome: String,
-        val cpf: String,
-        private val senha: Int
+    val nome: String,
+    val cpf: String,
+    var endereco: Endereco = Endereco(),
+    private val senha: Int
 ) : Autenticavel {
 
     override fun autentica(senha: Int): Boolean {

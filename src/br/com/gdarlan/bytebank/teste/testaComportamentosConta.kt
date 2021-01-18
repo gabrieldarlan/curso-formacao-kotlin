@@ -1,11 +1,29 @@
-import modelo.ContaCorrente
-import modelo.ContaPoupanca
+import br.com.gdarlan.bytebank.modelo.Cliente
+import br.com.gdarlan.bytebank.modelo.ContaCorrente
+import br.com.gdarlan.bytebank.modelo.ContaPoupanca
+import br.com.gdarlan.bytebank.modelo.Endereco
 
 fun testaConta() {
-    val contaGabriel = ContaCorrente(titular = "Gabriel", numero = 1000)
+    val contaGabriel = ContaCorrente(
+        titular = Cliente(
+            nome = "Gabriel",
+            cpf = "123.456.789-78",
+            senha = 1000,
+            endereco = Endereco(
+                logradouro = "Rua Nena"
+            )
+        ),
+        numero = 1000,
+    )
     contaGabriel.deposita(200.0)
 
-    val contaKarla = ContaPoupanca(numero = 1001, titular = "Karla")
+    val contaKarla = ContaPoupanca(
+        numero = 1001, titular = Cliente(
+            nome = "Karla",
+            cpf = "456.789.123-45",
+            senha = 1001
+        )
+    )
     contaKarla.deposita(300.0)
 
     println(contaKarla.titular)
@@ -15,6 +33,7 @@ fun testaConta() {
     println(contaGabriel.titular)
     println(contaGabriel.numero)
     println(contaGabriel.saldo)
+    println("Endereço: ${contaGabriel.titular.endereco.logradouro}")
 
     println("Depositando na conta do Gabriel")
     contaGabriel.deposita(50.0)
@@ -50,3 +69,4 @@ fun testaConta() {
     println(contaGabriel.saldo)
     println(contaKarla.saldo)
 }
+

@@ -1,4 +1,4 @@
-package modelo
+package br.com.gdarlan.bytebank.modelo
 
 class Diretor(
         nome: String,
@@ -6,12 +6,12 @@ class Diretor(
         salario: Double,
         senha: Int,
         val plr: Double
-) : FuncionarioAdmin(
+) : br.com.gdarlan.bytebank.modelo.FuncionarioAdmin(
         nome = nome,
         cpf = cpf,
         salario = salario,
         senha = senha
-), Autenticavel {
+), br.com.gdarlan.bytebank.modelo.Autenticavel {
     override fun bonificacao(): Double {
         return this.salario + this.plr
     }

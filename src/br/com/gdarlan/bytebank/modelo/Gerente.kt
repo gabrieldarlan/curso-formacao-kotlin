@@ -1,19 +1,16 @@
-package modelo
-
-import modelo.Autenticavel
-import modelo.FuncionarioAdmin
+package br.com.gdarlan.bytebank.modelo
 
 class Gerente(
         nome: String,
         cpf: String,
         salario: Double,
         senha: Int
-) : FuncionarioAdmin(
+) : br.com.gdarlan.bytebank.modelo.FuncionarioAdmin(
         nome = nome,
         cpf = cpf,
         salario = salario,
         senha = senha
-), Autenticavel {
+), br.com.gdarlan.bytebank.modelo.Autenticavel {
     override fun bonificacao(): Double {
         return this.salario
     }

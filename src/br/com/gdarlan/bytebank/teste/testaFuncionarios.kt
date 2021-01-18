@@ -1,7 +1,7 @@
-import modelo.Analista
-import modelo.CalculadoraBonificacao
-import modelo.Diretor
-import modelo.Gerente
+import br.com.gdarlan.bytebank.modelo.Analista
+import br.com.gdarlan.bytebank.modelo.CalculadoraBonificacao
+import br.com.gdarlan.bytebank.modelo.Diretor
+import br.com.gdarlan.bytebank.modelo.Gerente
 
 fun testaFuncionarios() {
     val gabriel = Analista(

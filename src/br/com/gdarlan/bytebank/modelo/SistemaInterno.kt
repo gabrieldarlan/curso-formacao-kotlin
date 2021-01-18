@@ -1,10 +1,8 @@
-package modelo
-
-import modelo.Autenticavel
+package br.com.gdarlan.bytebank.modelo
 
 class SistemaInterno {
 
-    fun entra(admin: Autenticavel, senha: Int) {
+    fun entra(admin: br.com.gdarlan.bytebank.modelo.Autenticavel, senha: Int) {
         if (admin.autentica(senha)) {
             println("Bem vindo ao Bytebank")
         } else {
