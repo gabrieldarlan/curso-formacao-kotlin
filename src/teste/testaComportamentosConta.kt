@@ -1,3 +1,6 @@
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+
 fun testaConta() {
     val contaGabriel = ContaCorrente(titular = "Gabriel", numero = 1000)
     contaGabriel.deposita(200.0)
