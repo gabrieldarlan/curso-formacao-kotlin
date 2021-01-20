@@ -1,9 +1,10 @@
+import br.com.gdarlan.bytebank.exception.SaldoInsuficienteException
 import br.com.gdarlan.bytebank.modelo.Cliente
 import br.com.gdarlan.bytebank.modelo.ContaCorrente
 import br.com.gdarlan.bytebank.modelo.ContaPoupanca
 import br.com.gdarlan.bytebank.modelo.Endereco
 
-fun testaConta() {
+fun testaComportamentosConta() {
     val contaGabriel = ContaCorrente(
         titular = Cliente(
             nome = "Gabriel",
@@ -60,11 +61,17 @@ fun testaConta() {
     println(contaKarla.saldo)
 
     println("Transferência da conta da Karla para o Gabriel")
-    if (contaKarla.transfere(300.0, contaGabriel)) {
+
+    try {
+        (contaKarla.transfere(250.0, contaGabriel))
         println("Transferencia sucedida")
-    } else {
+    } catch (e: SaldoInsuficienteException) {
         println("Falha na transferencia")
+        println("Saldo insuficiente")
+        e.printStackTrace()
     }
+
+
 
     println(contaGabriel.saldo)
     println(contaKarla.saldo)

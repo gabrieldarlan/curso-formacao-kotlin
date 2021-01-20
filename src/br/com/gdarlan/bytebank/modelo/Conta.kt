@@ -1,5 +1,7 @@
 package br.com.gdarlan.bytebank.modelo
 
+import br.com.gdarlan.bytebank.exception.SaldoInsuficienteException
+
 
 abstract class Conta(
     var titular: Cliente,
@@ -24,13 +26,12 @@ abstract class Conta(
 
     abstract fun saca(valor: Double)
 
-    fun transfere(valor: Double, destino: Conta): Boolean {
-        if (this.saldo >= valor) {
-            this.saldo -= valor
-            destino.deposita(valor)
-            return true
+    fun transfere(valor: Double, destino: Conta) {
+        if (saldo < valor) {
+            throw SaldoInsuficienteException()
         }
-        return false
+        this.saldo -= valor
+        destino.deposita(valor)
     }
 }
 
