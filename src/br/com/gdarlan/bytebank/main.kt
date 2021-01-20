@@ -30,7 +30,7 @@ fun funcao2() {
     for (i in 1..5) {
         println(i)
         val endereco = Any()
-        throw SaldoInsuficienteException()
+        throw SaldoInsuficienteException("Saldo insuficiente")
     }
     println("fim funcao2")
 }

@@ -1,3 +1,4 @@
+import br.com.gdarlan.bytebank.exception.FalhaAutenticacaoException
 import br.com.gdarlan.bytebank.exception.SaldoInsuficienteException
 import br.com.gdarlan.bytebank.modelo.Cliente
 import br.com.gdarlan.bytebank.modelo.ContaCorrente
@@ -63,15 +64,22 @@ fun testaComportamentosConta() {
     println("Transferência da conta da Karla para o Gabriel")
 
     try {
-        (contaKarla.transfere(250.0, contaGabriel))
+        (contaKarla.transfere(valor = 250.0, destino = contaGabriel, senha = 1000))
         println("Transferencia sucedida")
+
     } catch (e: SaldoInsuficienteException) {
         println("Falha na transferencia")
         println("Saldo insuficiente")
         e.printStackTrace()
+    } catch (e: FalhaAutenticacaoException) {
+        println("Falha na transferencia")
+        println("Falha na autenticacao")
+        e.printStackTrace()
+    } catch (e: Exception) {
+        println("Erro desconhecido")
+        e.printStackTrace()
+
     }
-
-
 
     println(contaGabriel.saldo)
     println(contaKarla.saldo)

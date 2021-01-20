@@ -1,6 +1,4 @@
 package br.com.gdarlan.bytebank.exception
 
-import java.lang.RuntimeException
-
-class SaldoInsuficienteException() : RuntimeException("Saldo insuficiente") {
+class SaldoInsuficienteException(mensagem: String = "Saldo insuficiente") : Exception(mensagem) {
 }
