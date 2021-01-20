@@ -1,9 +1,9 @@
+package br.com.gdarlan.bytebank.teste
+
 import br.com.gdarlan.bytebank.modelo.*
-import br.com.gdarlan.bytebank.teste.testaContasDiferentes
 
 
-fun main() {
-
+fun testaAny() {
     val karla = object : Autenticavel {
         val nome: String = "Karla"
         val cpf: String = "111.111.111-11"
@@ -21,5 +21,4 @@ fun main() {
 
     testaContasDiferentes()
     println("Total de contas criadas: ${Conta.total}")
-
 }
